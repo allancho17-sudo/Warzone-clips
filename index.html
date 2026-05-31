@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The best Call of Duty: Warzone highlight clips — clutch wins, insane snipes, and high-kill games." />
+  <title>Warzone Highlights — Best COD Warzone Clips</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Top navigation -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <span class="brand-mark">WZ</span>
+        <span class="brand-text">Warzone<strong>Highlights</strong></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#clips">Clips</a>
+        <a href="#submit">Submit</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <p class="eyebrow">CALL OF DUTY • WARZONE</p>
+      <h1>Clutch plays. Insane snipes.<br />Highlight reel material.</h1>
+      <p class="hero-sub">A curated feed of the best Warzone moments — high-kill games, last-circle wins, and shots that shouldn't have landed.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#clips">Watch Clips</a>
+        <a class="btn btn-ghost" href="#submit">Submit a Clip</a>
+      </div>
+      <div class="hero-stats" id="hero-stats">
+        <div class="stat"><span class="stat-num" data-stat="clips">—</span><span class="stat-label">Clips</span></div>
+        <div class="stat"><span class="stat-num" data-stat="kills">—</span><span class="stat-label">Total Kills</span></div>
+        <div class="stat"><span class="stat-num" data-stat="wins">—</span><span class="stat-label">Wins</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clips -->
+  <main class="container" id="clips">
+    <div class="section-head">
+      <h2>Highlight Feed</h2>
+      <p>Filter the reel by what you're in the mood for.</p>
+    </div>
+
+    <div class="controls">
+      <div class="filters" id="filters" role="tablist" aria-label="Filter clips by category"></div>
+      <div class="search-wrap">
+        <input type="search" id="search" placeholder="Search clips, players, weapons…" aria-label="Search clips" />
+      </div>
+    </div>
+
+    <div class="clip-grid" id="clip-grid"></div>
+    <p class="empty-state" id="empty-state" hidden>No clips match your filter. Try another category.</p>
+  </main>
+
+  <!-- Submit -->
+  <section class="submit-band" id="submit">
+    <div class="container submit-inner">
+      <div>
+        <h2>Got a clip worth sharing?</h2>
+        <p>Drop a YouTube or Twitch link and we'll feature the cleanest plays in the feed.</p>
+      </div>
+      <form class="submit-form" id="submit-form">
+        <input type="url" id="clip-url" placeholder="https://youtube.com/watch?v=…" required aria-label="Clip URL" />
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+    <p class="submit-note" id="submit-note" hidden></p>
+  </section>
+
+  <!-- About -->
+  <footer class="site-footer" id="about">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark">WZ</span>
+        <p>Warzone Highlights is a fan-made showcase of community clips. Not affiliated with Activision or Call of Duty.</p>
+      </div>
+      <p class="footer-copy">Built for the squad. Drop in, frag out.</p>
+    </div>
+  </footer>
+
+  <!-- Video Modal -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" data-close aria-label="Close">&times;</button>
+      <div class="modal-video" id="modal-video"></div>
+      <div class="modal-meta">
+        <h3 id="modal-title"></h3>
+        <p id="modal-desc"></p>
+        <div class="modal-tags" id="modal-tags"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="clips.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
