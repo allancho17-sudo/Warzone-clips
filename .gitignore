@@ -1,0 +1,11 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Logs / deps (if you later add a toolchain)
+node_modules/
+npm-debug.log*
+dist/
