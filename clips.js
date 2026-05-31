@@ -2,170 +2,236 @@
  * Warzone Highlights — clip data
  * -------------------------------
  * These are real Call of Duty: Warzone videos hosted on YouTube, sourced from
- * public search results. Each entry embeds the actual video by its YouTube ID.
+ * public YouTube search results. Each entry embeds the actual video by its
+ * YouTube ID (the 11-character code in a watch?v=… link).
  *
  * Add or swap clips freely. Each clip supports two source types:
  *
- *   1. YouTube:   type: "youtube",  src: "<VIDEO_ID>"   (the 11-char ID in watch?v=…)
+ *   1. YouTube:   type: "youtube",  src: "<VIDEO_ID>"
  *   2. Direct MP4: type: "mp4",     src: "https://…/clip.mp4"
  *
  * Fields:
- *   title    – headline shown on the card
- *   player   – creator / channel (gamertag style)
- *   category – one of: "Snipes", "Clutch", "High Kill", "Funny", "Movement"
+ *   title    – headline shown on the card (kept close to the real video title)
+ *   player   – creator / channel
+ *   category – e.g. "Snipes", "Clutch", "High Kill", "Funny", "Movement", "Best Of"
  *   weapon   – weapon used (free text, also searchable)
- *   duration – display string e.g. "0:42"
  *   kills    – number, feeds the "Total Kills" stat
  *   win      – true if the clip ended in a W (feeds "Wins" stat)
  *   desc     – short description shown in the modal
- *   thumb    – optional custom thumbnail URL (YouTube auto-generates one)
+ *   duration – OPTIONAL display string e.g. "0:42" (omitted when unknown)
+ *   thumb    – OPTIONAL custom thumbnail (YouTube auto-generates one otherwise)
  *
  * Note: if a specific video ever has embedding disabled by its uploader, the
  * player will show a "Watch on YouTube" link instead — just swap in another ID.
  */
 window.CLIPS = [
+  /* ---------------- High Kill ---------------- */
   {
-    title: "Top 50 Kills of All Time — Best Sniper Headshots & Longshots",
-    player: "WZ Highlights",
-    category: "Snipes",
-    weapon: "Sniper",
-    duration: "12:38",
-    kills: 50,
-    win: false,
-    desc: "A countdown of the 50 cleanest sniper headshots and cross-map longshots ever pulled off in Warzone.",
-    type: "youtube",
-    src: "_5Rw-Ew8mYg"
-  },
-  {
-    title: "The BEST Warzone Sniper Montage",
-    player: "WZ Snipers",
-    category: "Snipes",
-    weapon: "Kar98k / HDR",
-    duration: "8:14",
-    kills: 40,
-    win: false,
-    desc: "Back-to-back quickscopes, no-scopes, and impossible flicks set to the beat. Pure sniper eye-candy.",
-    type: "youtube",
-    src: "oFI52CWPGfA"
-  },
-  {
-    title: "Warzone Sniper Montage",
-    player: "ClipVault",
-    category: "Snipes",
-    weapon: "Sniper",
-    duration: "6:02",
-    kills: 28,
-    win: false,
-    desc: "A tight montage of long-range eliminations and squad-breaking headshots across Verdansk and beyond.",
-    type: "youtube",
-    src: "Lf-mEZirMW8"
-  },
-  {
-    title: "Warzone Sniper Clips Compilation",
-    player: "ClipVault",
-    category: "Snipes",
-    weapon: "Sniper",
-    duration: "5:21",
-    kills: 22,
-    win: false,
-    desc: "Community-submitted sniper clips — the kind of shots that make the whole lobby spectate.",
-    type: "youtube",
-    src: "ujLrxNXP9pM"
-  },
-  {
-    title: "INSANE Warzone Sniper Montage — 30 Bomb",
-    player: "FragMaster",
+    title: "Solo vs Quads WORLD RECORD — 67 Kills",
+    player: "Metaphor",
     category: "High Kill",
-    weapon: "Sniper Support",
-    duration: "9:47",
-    kills: 30,
+    weapon: "Meta Loadout",
+    kills: 67,
     win: true,
-    desc: "A 30-kill game carried by lights-out sniping. Loadout dropped early and the lobby never recovered.",
+    desc: "Metaphor's record-setting solo-vs-quads game — 67 eliminations in a single match of pure aggression.",
     type: "youtube",
-    src: "YJI5Du0Q3Vc"
+    src: "o5oLFS5kKCw"
   },
   {
-    title: "Warzone TOP 100 PLAYS of the Year",
-    player: "WZ Top Plays",
+    title: "60 Kills Solo vs Squads in Warzone",
+    player: "WZ Pros",
     category: "High Kill",
-    weapon: "Various",
-    duration: "18:55",
-    kills: 100,
+    weapon: "AR / SMG",
+    kills: 60,
     win: true,
-    desc: "The 100 best Warzone plays of the year — clutches, snipes, wipes, and game-winning highlights all in one reel.",
+    desc: "A 60-bomb solo run against full squads. Relentless pace from the first drop to the final circle.",
     type: "youtube",
-    src: "vsuVnCgkrIQ"
+    src: "Ulg_hyr5u4c"
   },
   {
-    title: "Warzone Solo vs Squads — WIN",
+    title: "Warzone Solo vs Squads — 41 Solo Kills",
     player: "SoloGrind",
+    category: "High Kill",
+    weapon: "Meta Loadout",
+    kills: 41,
+    win: true,
+    desc: "Forty-one kills flying solo against teams of four. Loadout secured early and the lobby paid for it.",
+    type: "youtube",
+    src: "NwpBlWPscK0"
+  },
+
+  /* ---------------- Clutch ---------------- */
+  {
+    title: "INSANE Solo vs Squads Win (31 Kills)",
+    player: "ClutchKing",
+    category: "Clutch",
+    weapon: "AR / SMG",
+    kills: 31,
+    win: true,
+    desc: "A 31-kill solo win where the final circle came down to the wire. Textbook resets and closing the dub.",
+    type: "youtube",
+    src: "QqHI6ExIpHM"
+  },
+  {
+    title: "Epic Last-Second Win — Solo vs Squads (No Commentary)",
+    player: "No Comm Gameplay",
     category: "Clutch",
     weapon: "Meta AR",
-    duration: "14:09",
-    kills: 12,
-    win: true,
-    desc: "One player against full squads all game, closing it out in the final circle for the dub. Heart-rate material.",
-    type: "youtube",
-    src: "jVHbWVlVYxQ"
-  },
-  {
-    title: "Warzone Best Highlights — Epic & Funny Moments #1",
-    player: "WZ Moments",
-    category: "Funny",
-    weapon: "Various",
-    duration: "10:32",
     kills: 14,
-    win: false,
-    desc: "The best of both worlds — jaw-dropping plays mixed with the chaos and comedy only Warzone delivers.",
+    win: true,
+    desc: "Perfect rotations and smart positioning set up an unexpected last-second victory. Pure gameplay, no talking.",
     type: "youtube",
-    src: "Yhq8ut9NFNI"
+    src: "SnuYbi7tYqs"
   },
   {
-    title: "Warzone Epic & Funny Moments #25",
+    title: "\"VIOLATE HIM!\" — 1v4 Gas Play Clutch (Both POVs)",
+    player: "WZ Community",
+    category: "Clutch",
+    weapon: "SMG",
+    kills: 4,
+    win: true,
+    desc: "A full-squad 1v4 won inside the gas, shown from both points of view. One of the cleanest clutches around.",
+    type: "youtube",
+    src: "BuT71SJa2sE"
+  },
+  {
+    title: "Insane IMPOSSIBLE 1v4 Warzone Clutch",
+    player: "Stract",
+    category: "Clutch",
+    weapon: "SMG",
+    kills: 4,
+    win: true,
+    desc: "A 1v4 that had no business going this way. Stract resets the fight and breaks the entire squad solo.",
+    type: "youtube",
+    src: "Hx1nWtwOa_4"
+  },
+
+  /* ---------------- Snipes ---------------- */
+  {
+    title: "The Verdansk — A Warzone Sniper Montage",
+    player: "FaZe Pamaj",
+    category: "Snipes",
+    weapon: "HDR / Kar98k",
+    kills: 45,
+    win: false,
+    desc: "FaZe Pamaj's classic Verdansk sniper montage — flicks, no-scopes, and cross-map headshots back to back.",
+    type: "youtube",
+    src: "K3F2bo2dtpU"
+  },
+  {
+    title: "Top 50 Best Warzone Sniper Kills",
+    player: "WZ Snipers",
+    category: "Snipes",
+    weapon: "Sniper",
+    kills: 50,
+    win: false,
+    desc: "Fifty of the cleanest sniper eliminations ever clipped in Warzone, counted down to the very best.",
+    type: "youtube",
+    src: "zN5NUsV401c"
+  },
+  {
+    title: "The 75 Best Warzone Sniper Kills Ever Witnessed",
+    player: "WZ Snipers",
+    category: "Snipes",
+    weapon: "Sniper",
+    kills: 75,
+    win: false,
+    desc: "Seventy-five jaw-dropping snipes — the kind of shots that make the whole lobby spectate.",
+    type: "youtube",
+    src: "dIXLApvR4MM"
+  },
+  {
+    title: "Top 100 in the World — Warzone Sniper Montage",
+    player: "WZ Snipers",
+    category: "Snipes",
+    weapon: "Sniper",
+    kills: 100,
+    win: false,
+    desc: "A hundred elite-level snipes from some of the best long-range players Warzone has ever seen.",
+    type: "youtube",
+    src: "EeF8IwTHVyo"
+  },
+  {
+    title: "15 Impossible COD Warzone Sniper Shots",
+    player: "WZ Snipers",
+    category: "Snipes",
+    weapon: "Sniper",
+    kills: 15,
+    win: false,
+    desc: "Fifteen shots that physically should not have connected. Trajectory, lead, and luck all aligned.",
+    type: "youtube",
+    src: "pVBOq44KJwo"
+  },
+
+  /* ---------------- Movement / Gameplay ---------------- */
+  {
+    title: "Warzone Is Better Like THIS — Duos Gameplay",
+    player: "JackFrags",
+    category: "Movement",
+    weapon: "Various",
+    kills: 12,
+    win: false,
+    desc: "JackFrags drops into Urzikstan for a clean duos game — slick movement, smart fights, great commentary.",
+    type: "youtube",
+    src: "km03k3o635E"
+  },
+
+  /* ---------------- Funny ---------------- */
+  {
+    title: "Top 300 Funniest Fails in Warzone",
     player: "WZ Moments",
     category: "Funny",
     weapon: "Various",
-    duration: "11:08",
-    kills: 16,
+    kills: 0,
     win: false,
-    desc: "Episode 25 of the fan-favorite series — clutch saves, perfectly-timed killcams, and pure squad chaos.",
+    desc: "Three hundred of the funniest fails, fumbles, and only-in-Warzone moments all in one compilation.",
     type: "youtube",
-    src: "h2Gv0funR0M"
+    src: "23Ne81xWPgk"
   },
   {
-    title: "Warzone Funny Moments & Fails",
-    player: "ClipVault",
-    category: "Funny",
-    weapon: "Various",
-    duration: "9:14",
-    kills: 8,
-    win: false,
-    desc: "Gas-circle gambles, gulag heartbreak, and the kind of fails you can only laugh at. We've all been there.",
-    type: "youtube",
-    src: "YbJOTdZBX1g"
-  },
-  {
-    title: "COD Warzone Funny Moments Compilation",
+    title: "Warzone WTF & Funny Moments #474",
     player: "WZ Moments",
     category: "Funny",
     weapon: "Various",
-    duration: "12:47",
-    kills: 11,
+    kills: 0,
     win: false,
-    desc: "A full compilation of the funniest Warzone moments — teammates, timing, and total chaos.",
+    desc: "Episode 474 of the long-running series — physics chaos, perfect timing, and pure squad comedy.",
     type: "youtube",
-    src: "8fAhEf6jLfc"
+    src: "J6SoGDRCyaw"
   },
   {
-    title: "Warzone WTF & Funny Moments",
-    player: "ClipVault",
+    title: "Funniest Warzone Fails Before Epic Wins",
+    player: "WZ Moments",
     category: "Funny",
     weapon: "Various",
-    duration: "8:39",
-    kills: 9,
+    kills: 0,
     win: false,
-    desc: "The plays that make you go 'how?!' — physics-defying moments and lucky breaks caught on stream.",
+    desc: "The fails that somehow turned into wins. Gas-circle gambles and gulag heartbreak that paid off.",
     type: "youtube",
-    src: "zUuKuP3uvWc"
+    src: "uV8PgeT0PXQ"
+  },
+
+  /* ---------------- Best Of ---------------- */
+  {
+    title: "1000 Warzone Moments That Will Blow Your Mind (2025)",
+    player: "Top WZ Plays",
+    category: "Best Of",
+    weapon: "Various",
+    kills: 0,
+    win: false,
+    desc: "A thousand of the best Warzone moments from 2025 — clutches, snipes, wipes, and highlight-reel plays.",
+    type: "youtube",
+    src: "wptEU4CYg8I"
+  },
+  {
+    title: "Best Warzone Highlights 2025 (Part 2)",
+    player: "Top WZ Plays",
+    category: "Best Of",
+    weapon: "Various",
+    kills: 0,
+    win: false,
+    desc: "Part two of the year's best — the top plays and funniest moments the community produced in 2025.",
+    type: "youtube",
+    src: "87XullAM_GE"
   }
 ];

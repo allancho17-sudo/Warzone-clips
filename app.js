@@ -95,7 +95,7 @@
       card.innerHTML = `
         <div class="thumb" style="${thumb ? `background-image:url('${thumb}')` : ""}">
           <span class="cat-tag">${clip.category}</span>
-          <span class="duration">${clip.duration || ""}</span>
+          ${clip.duration ? `<span class="duration">${clip.duration}</span>` : ""}
           <span class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
         </div>
         <div class="clip-body">
@@ -141,7 +141,7 @@
     modalTitle.textContent = clip.title;
     modalDesc.textContent = clip.desc || "";
     modalTags.innerHTML = "";
-    [`@${clip.player}`, clip.category, clip.weapon, `${clip.kills} kills`]
+    [`@${clip.player}`, clip.category, clip.weapon, clip.kills ? `${clip.kills} kills` : null]
       .filter(Boolean)
       .forEach((t) => {
         const s = document.createElement("span");
