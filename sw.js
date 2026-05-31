@@ -2,7 +2,7 @@
  * Caches the app shell so the site loads instantly and works offline.
  * Bump CACHE_VERSION whenever you change cached files to force an update.
  */
-const CACHE_VERSION = "wz-highlights-v1";
+const CACHE_VERSION = "wz-highlights-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -56,16 +56,19 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
+  // Stale-while-revalidate for same-origin assets: serve cache instantly for
+  // speed/offline, but always re-fetch in the background so updates (e.g. new
+  // clips in clips.js) propagate on the next load instead of being stuck.
   event.respondWith(
     caches.match(req).then((cached) => {
-      return (
-        cached ||
-        fetch(req).then((res) => {
+      const network = fetch(req)
+        .then((res) => {
           const copy = res.clone();
           caches.open(CACHE_VERSION).then((c) => c.put(req, copy));
           return res;
         })
-      );
+        .catch(() => cached);
+      return cached || network;
     })
   );
 });
