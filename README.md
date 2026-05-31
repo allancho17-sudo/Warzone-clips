@@ -55,13 +55,30 @@ Edit **`clips.js`** — each clip is one object in the `window.CLIPS` array:
 - New categories appear as filter chips automatically.
 - `kills` and `win` feed the stat counters in the hero section.
 
+## Install as an app (PWA)
+
+The site is a Progressive Web App, so you can install it to your phone or
+desktop and launch it fullscreen like a native app — it even loads offline.
+
+- **iPhone/iPad (Safari):** Share → *Add to Home Screen*
+- **Android (Chrome):** menu (⋮) → *Install app* / *Add to Home Screen*
+- **Desktop (Chrome/Edge):** install icon in the address bar
+
+PWA files: `manifest.webmanifest` (app metadata + icons) and `sw.js` (a
+service worker that caches the app shell). Bump `CACHE_VERSION` in `sw.js`
+whenever you change cached files so installed users get the update.
+
 ## File structure
 
 ```
-index.html   – page markup
-styles.css   – all styling (dark gaming theme)
-clips.js     – your clip data (edit this!)
-app.js       – rendering, filtering, search, and modal logic
+index.html            – page markup
+styles.css            – all styling (dark gaming theme)
+clips.js              – your clip data (edit this!)
+app.js                – rendering, filtering, search, and modal logic
+manifest.webmanifest  – PWA metadata (name, colors, icons)
+sw.js                 – service worker (offline app shell cache)
+icon-192/512.png      – app icons  •  apple-touch-icon.png – iOS icon
+.github/workflows/    – GitHub Pages auto-deploy
 ```
 
 ## Notes
